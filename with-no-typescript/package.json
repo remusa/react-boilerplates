@@ -1,0 +1,132 @@
+{
+    "name": "parcel-react",
+    "version": "1.0.1",
+    "description": "React + Parcel boilerplate",
+    "main": "index.js",
+    "//": {
+        "comment": {
+            "build": "NODE_ENV=production parcel build dist/index.html --public-url ./"
+        }
+    },
+    "scripts": {
+        "start": "cross-env-shell NODE_ENV=development parcel public/index.html --open",
+        "build": "parcel build public/index.html -d build",
+        "build2": "cross-env NODE_ENV=production parcel build public/index.html -d build",
+        "test": "cross-env NODE_ENV=test npm run test:watch",
+        "test:watch": "cross-env NODE_ENV=test jest --silent --watch",
+        "test:coverage": "cross-env NODE_ENV=test jest --silent --coverage",
+        "lint": "eslint \"src/**/*.{js,jsx}\"",
+        "lint:quiet": "eslint \"src/**/*.{js,jsx}\" --quiet",
+        "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix && echo 'Lint complete.'",
+        "lint:fix2": "eslint . --fix && echo 'Lint complete.'",
+        "format": "prettier \"src/**/*.{js,html}\" --write && echo 'Format complete.'",
+        "pretty-quick": "pretty-quick",
+        "dev": "cross-env NODE_ENV=development npm start",
+        "deploy": "npm run build && npm run deploy:all",
+        "deploy:all": "npm run netlify:deploy & firebase deploy & now",
+        "netlify:deploy": "netlify deploy --dir=./build -p -m \"$(git log -1 --pretty=%B)\"",
+        "firebase:login": "firebase login",
+        "firebase:init": "firebase init",
+        "firebase:deploy": "firebase deploy"
+    },
+    "dependencies": {
+        "normalize.css": "^8.0.1",
+        "nprogress": "^0.2.0",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-router-dom": "^5.0.1",
+        "react-spinners": "^0.5.4",
+        "styled-components": "^4.3.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.5",
+        "@babel/plugin-proposal-class-properties": "^7.4.4",
+        "@babel/preset-env": "^7.4.5",
+        "@babel/preset-react": "^7.0.0",
+        "@testing-library/react": "^8.0.1",
+        "autoprefixer": "^9.6.0",
+        "babel-eslint": "^9.0.0",
+        "babel-jest": "^24.8.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "cross-env": "^5.2.0",
+        "eslint": "^5.16.0",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-config-prettier": "^4.3.0",
+        "eslint-config-wesbos": "0.0.19",
+        "eslint-plugin-html": "^5.0.5",
+        "eslint-plugin-import": "^2.18.0",
+        "eslint-plugin-jsx-a11y": "^6.2.1",
+        "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-react": "^7.14.2",
+        "eslint-plugin-react-hooks": "^1.6.1",
+        "jest": "^24.8.0",
+        "jest-dom": "^3.5.0",
+        "majestic": "^1.6.0",
+        "netlify-cli": "^2.11.22",
+        "node-sass": "^4.12.0",
+        "parcel-bundler": "^1.12.3",
+        "prettier": "^1.18.2",
+        "pretty-quick": "^1.11.0",
+        "prop-types": "^15.7.2",
+        "react-test-renderer": "^16.8.6",
+        "sass": "^1.21.0"
+    },
+    "jest": {
+        "testPathIgnorePatterns": [
+            "<rootDir>/node_modules/"
+        ],
+        "setupFilesAfterEnv": [
+            "@testing-library/react/cleanup-after-each"
+        ]
+    },
+    "postcss": {
+        "modules": false,
+        "plugins": {
+            "autoprefixer": {
+                "overrideBrowserslist": [
+                    ">1%",
+                    "last 4 versions",
+                    "Firefox ESR",
+                    "not ie < 9"
+                ],
+                "flexbox": "no-2009"
+            }
+        }
+    },
+    "eslintConfig": {
+        "extends": [
+            "wesbos"
+        ]
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-env",
+            "@babel/preset-react"
+        ],
+        "plugins": [
+            "@babel/plugin-proposal-class-properties"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/remusa/parcel-react.git"
+    },
+    "keywords": [
+        "parcel",
+        "react",
+        "boilerplate"
+    ],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/remusa/parcel-react/issues"
+    },
+    "homepage": "https://github.com/remusa/parcel-react#readme",
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ]
+}

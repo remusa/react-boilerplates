@@ -1,0 +1,16 @@
+{
+    "jest": {
+        "preset": "ts-jest",
+        "transform": {
+            "\\.(ts|tsx)$": "ts-jest",
+            "^.+\\.jsx?$": "babel-jest"
+        },
+        "moduleNameMapper": {
+            "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+        },
+        "moduleDirectories": ["node_modules", "utils", "src", "__dirname"],
+        "moduleFileExtensions": ["ts", "tsx", "js"],
+        "testPathIgnorePatterns": ["<rootDir>/node_modules/"],
+        "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"]
+    }
+}
