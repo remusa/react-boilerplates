@@ -1,0 +1,16 @@
+{
+  "name": "Podwave",
+  "short_name": "podwave",
+  "description": "A description",
+  "icons": [
+    {
+      "src": "/static/pwa.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "start_url": "/",
+  "display": "standalone"
+}
