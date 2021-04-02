@@ -2,21 +2,29 @@ const TEST_REGEX = '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|js?|tsx?|ts?)$'
 
 module.exports = {
   roots: ['<rootDir>'],
-  testRegex: TEST_REGEX,
+  "testEnvironment": "jsdom",
+  "preset": "ts-jest",
+  "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
   transform: {
-    '^.+\\.[t|j]sx?$': 'babel-jest',
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.tsx?$': 'ts-jest',
   },
-  setupFiles: ['<rootDir>/jest.setup.js'],
+  testRegex: TEST_REGEX,
   testPathIgnorePatterns: [
     '<rootDir>/.next/',
     '<rootDir>/node_modules/',
     '<rootDir>[/\\\\](build|docs|node_modules|.next)[/\\\\]',
   ],
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   // moduleNameMapper: {
   //   '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   // },
+  "globals": {
+    "ts-jest": {
+      "tsConfig": "<rootDir>/tsconfig.jest.json"
+    }
+  },
   collectCoverage: false,
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',

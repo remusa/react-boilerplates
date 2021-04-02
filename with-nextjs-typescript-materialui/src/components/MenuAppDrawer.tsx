@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     fullList: {
       width: 'auto',
+      minWidth: 250,
     },
     menuButton: {
       marginRight: theme.spacing(2),

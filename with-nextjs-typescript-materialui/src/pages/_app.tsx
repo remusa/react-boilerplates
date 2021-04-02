@@ -7,7 +7,7 @@ import React from 'react'
 import MenuAppBar from '../components/MenuAppBar'
 import theme from '../theme'
 
-class MyApp extends App {
+export default class MyApp extends App {
   componentDidMount() {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side')
@@ -36,5 +36,3 @@ class MyApp extends App {
     )
   }
 }
-
-export default MyApp

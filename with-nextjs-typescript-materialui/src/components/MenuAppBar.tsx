@@ -40,7 +40,7 @@ function MenuAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position='static'>
+      <AppBar position='static' color='inherit'>
         <Toolbar>
           <MenuAppDrawer />
           <Link href='/'>

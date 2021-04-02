@@ -1,10 +1,10 @@
-import React from 'react'
+import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
-import Box from '@material-ui/core/Box'
-import SourceLink from '../components/SourceLink'
-import Link from '../components/Link'
+import React from 'react'
 import Copyright from '../components/Copyright'
+import Link from '../components/Link'
+import SourceLink from '../components/SourceLink'
 
 export default function App() {
   return (
