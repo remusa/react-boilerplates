@@ -63,7 +63,7 @@
         "jest": "^24.8.0",
         "jest-dom": "^3.5.0",
         "majestic": "^1.6.0",
-        "netlify-cli": "^2.11.22",
+        "netlify-cli": "^2.71.0",
         "node-sass": "^7.0.0",
         "parcel-bundler": "^1.12.3",
         "prettier": "^1.18.2",
